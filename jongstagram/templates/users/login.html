@@ -4,6 +4,7 @@
 <div id="login">
     <form method="POST">
         <h1>Jongstagram</h1>
+        
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-login" disabled>로그인</button>
@@ -12,4 +13,11 @@
         -->
     </form>
 </div>
+{% if messages %}
+<script>
+    {% for message in messages %}
+        alert('{{ message }}');
+    {% endfor %}
+</script>
+{% endif %}
 {% endblock %}

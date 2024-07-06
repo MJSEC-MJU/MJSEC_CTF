@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-
+from django.contrib import messages
 from users.forms import LoginForm, SignupForm
 from users.models import User
 
@@ -42,8 +42,10 @@ def signup(request):
         form = SignupForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            return redirect("posts:feeds")
+            #login(request, user)
+            messages.success(request, '가입이 완료되었습니다! 로그인 해주세요')
+            return redirect("users:login")
+            #return redirect("posts:feeds")
     else:
         form = SignupForm()
 

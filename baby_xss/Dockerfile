@@ -1,7 +1,7 @@
 FROM node:18-slim 
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-ENV FLAG=DH{fake_flag}
+ENV FLAG=MJSEC{fake_flag}
 
 RUN apt-get update && apt-get install curl gnupg -y \
     && curl --location --silent https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \

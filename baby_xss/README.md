@@ -10,8 +10,11 @@
     git clone https://github.com/MJSEC-MJU/MJSEC_CTF.git
     cd MJSEC_CTF/baby_xss
     ```
-
-3. 도커 컨테이너 빌드 및 실행:
+3. 포트 열어주기:
+    ```sh
+    sudo ufw allow 3000
+    ```
+4. 도커 컨테이너 빌드 및 실행:
     ```sh
     sudo docker build -t my_express_app .  
     sudo docker run -d -p 3000:3000 -e FLAG="MJSEC{your_real_flag_here}" my_express_app

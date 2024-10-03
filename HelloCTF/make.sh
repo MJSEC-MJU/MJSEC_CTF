@@ -3,7 +3,7 @@
 tag=helloctf:0.1
 
 # 현재 실행 중인 컨테이너 중에서 해당 이미지를 기반으로 실행된 모든 컨테이너 삭제
-sudo docker rm -f $(docker ps -a -q --filter ancestor=$tag)
+sudo docker rm -f $(sudo docker ps -a -q --filter ancestor=$tag)
 
 # 이미지를 삭제
 sudo docker rmi $tag

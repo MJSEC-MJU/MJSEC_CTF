@@ -1,7 +1,7 @@
 ### Project ###
 posts/migrations/0002_post_samples.py
 posts/migrations/0003_post_samples.py
-static/images/
+
 
 ### Django ###
 /.test

@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <div id="login">
     <form method="POST">
-        <h1>Jongstagram</h1>
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="로고">
+        </div>
+        <h1>MJSEC</h1>
         
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-login" disabled>로그인</button>
-        <!--  MJSEC 여러분 회원가입 페이지가 공사중입니다! 회원가입을 하고 싶으시다면 찾아서 들어가세요
-        <a href="{% url 'users:signup' %}">회원가입 페이지로 이동</a>
-        -->
+    <!--Sign Up Hint: Use DEBUG = True -->
     </form>
 </div>
 {% if messages %}

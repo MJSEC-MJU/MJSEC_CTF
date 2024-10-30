@@ -38,6 +38,8 @@ def logout_view(request):
 
 
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect("posts:feeds")
     if request.method == "POST":
         form = SignupForm(data=request.POST, files=request.FILES)
         if form.is_valid():
@@ -54,6 +56,8 @@ def signup(request):
 
 
 def profile(request, user_id):
+    if not request.user.is_authenticated:
+        return redirect("users:login")
     user = get_object_or_404(User, id=user_id)
     context = {
         "user": user,
@@ -62,6 +66,8 @@ def profile(request, user_id):
 
 
 def followers(request, user_id):
+    if not request.user.is_authenticated:
+        return redirect("users:login")
     user = get_object_or_404(User, id=user_id)
     context = {
         "user": user,
@@ -72,6 +78,8 @@ def followers(request, user_id):
 
 
 def following(request, user_id):
+    if not request.user.is_authenticated:
+        return redirect("users:login")
     user = get_object_or_404(User, id=user_id)
     context = {
         "user": user,
@@ -82,6 +90,8 @@ def following(request, user_id):
 
 
 def follow(request, user_id):
+    if not request.user.is_authenticated:
+        return redirect("users:login")
     # 로그인 한 유저
     user = request.user
     # 팔로우 하려는 유저

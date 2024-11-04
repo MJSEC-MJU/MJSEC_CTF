@@ -10,8 +10,12 @@
         
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-login" disabled>로그인</button>
-    <!--Sign Up Hint: Use DEBUG = True -->
+        <button type="submit" class="btn btn-login" disabled>로그인(고장남)</button>
+    <!-- MJSEC 가입을 위한 힌트!!!
+    이 사이트는 장고(DJango) 사이트이고  Debug=True로 되어있습니다.
+    DEBUG=True인 경우 오류 내용을 화면에 상세히 출력해줍니다.
+    에러를 발생시키면 가입할 수 있는 경로가 나옵니다~-->
+
     </form>
 </div>
 {% if messages %}

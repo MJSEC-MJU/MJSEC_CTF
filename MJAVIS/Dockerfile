@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-alpine
 
 RUN apk add --no-cache maven
 
-COPY osjarvis-app /usr/src/pentestgo
+COPY mjarvis-app /usr/src/pentestgo
 WORKDIR /usr/src/pentestgo
 
 RUN mvn clean package

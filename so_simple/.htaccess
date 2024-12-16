@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# 정확히 '/flag.php'인 요청만 index.php로 리다이렉트
+RewriteCond %{THE_REQUEST} "GET /flag.php HTTP" [NC]
+RewriteRule ^flag\.php$ /index.php [L,R=302]
+
+# 나머지 요청은 허용

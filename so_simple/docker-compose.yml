@@ -1,0 +1,11 @@
+services:
+  php-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80" # 로컬 포트 8080을 컨테이너의 80번 포트에 연결
+    volumes:
+      - ./index.php:/var/www/html/index.php
+      - ./flag.php:/var/www/html/flag.php
+      - ./.htaccess:/var/www/html/.htaccess

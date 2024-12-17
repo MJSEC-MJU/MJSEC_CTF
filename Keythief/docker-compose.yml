@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  chall-app:
+    build:
+      context: .           # Dockerfile이 위치한 현재 디렉토리
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"        # 호스트 포트 8000을 컨테이너의 8000 포트와 매핑
+    environment:
+      - APP_USER=chall
+      - APP_PORT=8000
+    restart: unless-stopped

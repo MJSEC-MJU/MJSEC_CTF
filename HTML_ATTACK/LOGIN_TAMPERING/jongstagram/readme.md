@@ -1,4 +1,4 @@
-# CTF_XSS
+# mjsec homepage
 
 ## 서버 설치 단계
 1. 시스템 패키지 업데이트 및 Docker 설치:
@@ -32,7 +32,7 @@
     ```
     생성된 Secret Key를 `settings.py` 파일의 `SECRET_KEY` 변수에 추가합니다.
 
-3. `pylog/settings.py` 파일에서 `ALLOWED_HOSTS` 설정 변경:
+3. `config/settings.py` 파일에서 `ALLOWED_HOSTS` 설정 변경:
     ```python
     ALLOWED_HOSTS = ["your_domain"]
     ```
@@ -49,6 +49,6 @@
 1. Docker 컨테이너 진입 및 생성
    ```sh
     sudo docker-compose exec web /bin/sh
-    python manage.py creatsuperuser
+    python manage.py createsuperuser
     ```
 
